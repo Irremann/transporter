@@ -303,7 +303,8 @@ minetest.register_node("transporter:transporter", {
     is_ground_content = false,
     groups = {oddly_breakable_by_hand=3, technic_machine=1, technic_hv=1},
     connect_sides = {"bottom"},
-
+	paramtype = "light",
+	paramtype2 = "facedir",
     on_construct = function(pos)
                 local meta = minetest.get_meta(pos)
                 meta:set_string("bookmarks", minetest.serialize({{name="Name", x="X", y="Y", z="Z"}}))
@@ -323,6 +324,8 @@ minetest.register_node("transporter:transporter", {
 minetest.register_node("transporter:transporter_active", {
     description = "HV Transporter active",
     tiles = {"transporter_top_active.png", "transporter_bottom.png", "transporter_side.png", "transporter_side.png", "transporter_side.png", {name = "transporter_front.png",animation = {type = "vertical_frames", aspect_w = 16, aspect_h = 16, length = 3.50},}},
+    paramtype = "light",
+	paramtype2 = "facedir",
     light_source = 14,
     is_ground_content = false,
     groups = {oddly_breakable_by_hand=3, technic_machine=1, technic_hv=1, not_in_creative_inventory=1},
